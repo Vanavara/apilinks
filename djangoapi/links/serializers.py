@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Bookmark, Collection
+from .models import Bookmark, Collection, CustomUser
 
 
 class BookmarkSerializer(serializers.ModelSerializer):
@@ -14,3 +14,9 @@ class CollectionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Collection
         fields = '__all__'
+
+
+class CustomUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        field = ('id', 'username', 'email', 'first_name', 'last_name', 'email')

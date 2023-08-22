@@ -40,6 +40,7 @@ class Bookmark(models.Model):
     image_preview = models.URLField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    objects = models.Manager()
 
 
 class Collection(models.Model):
@@ -49,3 +50,4 @@ class Collection(models.Model):
     bookmarks = models.ManyToManyField(Bookmark, related_name='collections', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    objects = models.Manager()

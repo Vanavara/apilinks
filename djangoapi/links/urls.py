@@ -15,4 +15,12 @@ urlpatterns = [
     path('', include(router.urls)),
     path('dj-rest-auth/', include('dj_rest_auth.urls')),
     path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
+    path('bookmarks/create/', views.created_bookmark, name='create_bookmark'),
+    path('bookmarks/<int:bookmark_id>/delete/', views.delete_bookmark, name='delete_bookmark'),
+    path('collection/create/', views.create_collection, name='create_collection'),
+    path('collections/<int:collection_id>/add_bookmark/', views.add_bookmark_to_collection,
+         name='add_bookmark_to_collection'),
+    path('collections/<int:collection_id>/delete', views.delete_collection, name='delete_collection'),
+    path('collections/<int:collection_id>/update/', views.update_collection, name='update_collection'),
+
 ]
